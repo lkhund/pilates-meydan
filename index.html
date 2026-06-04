@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <title>Pilates Academy® Meydan — Pilates Excellence</title>
 <meta name="description" content="Pilates Academy® Meydan — Rooted in Tradition, Inspired by Innovation. Book your session at our boutique Dubai studio.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -382,7 +383,7 @@ footer .meta a:hover{opacity:.8}
       <div class="kicker">Begin Your Practice</div>
       <h2>Book a session</h2>
       <p class="sub" id="form-intro">Leave your details — our team will be in touch shortly.</p>
-      <form id="booking-form" action="https://hook.eu2.make.com/jxi8bm1q5wvluigodu2rf74tdie4mqk2" method="POST">
+      <form id="booking-form" action="#" method="post" novalidate>
         <div class="row2">
           <div class="field"><label>Name</label><input type="text" name="name" required placeholder="Your name"></div>
           <div class="field"><label>Phone</label><input type="tel" name="phone" placeholder="+971 …"></div>
@@ -397,7 +398,7 @@ footer .meta a:hover{opacity:.8}
             <option>Studio Rental</option>
           </select>
         </div>
-        <button type="submit" class="btn btn-block" id="form-submit">
+        <button type="button" class="btn btn-block" id="form-submit">
           Book Now
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </button>
@@ -491,6 +492,7 @@ footer .meta a:hover{opacity:.8}
 
 <script>
 (function(){
+  var WEBHOOK='https://hook.eu2.make.com/jxi8bm1q5wvluigodu2rf74tdie4mqk2';
   var form=document.getElementById('booking-form');
   var submitBtn=document.getElementById('form-submit');
   var status=document.getElementById('form-status');
@@ -498,15 +500,19 @@ footer .meta a:hover{opacity:.8}
   var intro=document.getElementById('form-intro');
   if(!form||!submitBtn)return;
   var btnDefault=submitBtn.innerHTML;
+  var sending=false;
 
-  form.addEventListener('submit',function(e){
-    e.preventDefault();
+  function sendForm(){
+    if(sending)return;
+    if(!form.reportValidity())return;
+    sending=true;
     submitBtn.disabled=true;
     status.hidden=true;
     submitBtn.textContent='Sending…';
 
-    fetch(form.action,{
+    fetch(WEBHOOK,{
       method:'POST',
+      headers:{'Accept':'text/plain'},
       body:new URLSearchParams(new FormData(form))
     }).then(function(res){
       if(!res.ok)throw new Error('submit failed');
@@ -518,7 +524,14 @@ footer .meta a:hover{opacity:.8}
       status.hidden=false;
       submitBtn.disabled=false;
       submitBtn.innerHTML=btnDefault;
+      sending=false;
     });
+  }
+
+  submitBtn.addEventListener('click',sendForm);
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    sendForm();
   });
 })();
 </script>
