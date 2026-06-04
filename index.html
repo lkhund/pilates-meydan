@@ -191,6 +191,21 @@ form{display:flex;flex-direction:column;gap:14px}
 }
 .row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .card .note{font-size:.72rem;color:var(--soft);text-align:center;margin-top:6px}
+.form-status{
+  font-size:.82rem;text-align:center;padding:12px 14px;border-radius:var(--radius-sm);
+  margin-top:4px;line-height:1.5;
+}
+.form-status.error{background:rgba(201,162,75,.12);color:var(--ink);border:1px solid rgba(201,162,75,.25)}
+.form-success{text-align:center;padding:12px 0 4px}
+.form-success .check{
+  width:52px;height:52px;margin:0 auto 18px;border-radius:50%;
+  background:linear-gradient(135deg,var(--mist),rgba(127,201,201,.35));
+  display:flex;align-items:center;justify-content:center;color:var(--aqua-deep);
+}
+.form-success .check svg{width:24px;height:24px;stroke:currentColor;fill:none;stroke-width:2}
+.form-success h3{font-size:1.8rem;margin-bottom:8px}
+.form-success p{color:var(--soft);font-size:.92rem;line-height:1.6}
+.btn:disabled{opacity:.65;cursor:not-allowed;transform:none}
 
 /* PILLARS */
 .pillars{padding:100px 0;position:relative}
@@ -366,8 +381,8 @@ footer .meta a:hover{opacity:.8}
     <div class="card fade d3" id="book">
       <div class="kicker">Begin Your Practice</div>
       <h2>Book a session</h2>
-      <p class="sub">Leave your details — our team will be in touch shortly.</p>
-      <form action="https://hook.eu2.make.com/jxi8bm1q5wvluigodu2rf74tdie4mqk2" method="POST">
+      <p class="sub" id="form-intro">Leave your details — our team will be in touch shortly.</p>
+      <form id="booking-form" action="https://hook.eu2.make.com/jxi8bm1q5wvluigodu2rf74tdie4mqk2" method="POST">
         <div class="row2">
           <div class="field"><label>Name</label><input type="text" name="name" required placeholder="Your name"></div>
           <div class="field"><label>Phone</label><input type="tel" name="phone" placeholder="+971 …"></div>
@@ -382,12 +397,18 @@ footer .meta a:hover{opacity:.8}
             <option>Studio Rental</option>
           </select>
         </div>
-        <button type="submit" class="btn btn-block">
+        <button type="submit" class="btn btn-block" id="form-submit">
           Book Now
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </button>
+        <p class="form-status error" id="form-status" hidden></p>
         <p class="note">We reply within 24 hours.</p>
       </form>
+      <div class="form-success" id="form-success" hidden>
+        <div class="check"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div>
+        <h3>Thank you</h3>
+        <p>Your request has been received.<br>Our team will be in touch within 24 hours.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -467,6 +488,40 @@ footer .meta a:hover{opacity:.8}
     <p class="meta" style="margin-top:6px">© 2026 Pilates Academy® Meydan · A branch of Pilates Academy® Dubai</p>
   </div>
 </footer>
+
+<script>
+(function(){
+  var form=document.getElementById('booking-form');
+  var submitBtn=document.getElementById('form-submit');
+  var status=document.getElementById('form-status');
+  var success=document.getElementById('form-success');
+  var intro=document.getElementById('form-intro');
+  if(!form||!submitBtn)return;
+  var btnDefault=submitBtn.innerHTML;
+
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    submitBtn.disabled=true;
+    status.hidden=true;
+    submitBtn.textContent='Sending…';
+
+    fetch(form.action,{
+      method:'POST',
+      body:new URLSearchParams(new FormData(form))
+    }).then(function(res){
+      if(!res.ok)throw new Error('submit failed');
+      form.hidden=true;
+      if(intro)intro.hidden=true;
+      success.hidden=false;
+    }).catch(function(){
+      status.textContent='Something went wrong — please try again.';
+      status.hidden=false;
+      submitBtn.disabled=false;
+      submitBtn.innerHTML=btnDefault;
+    });
+  });
+})();
+</script>
 
 </body>
 </html>
