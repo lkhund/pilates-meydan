@@ -62,7 +62,11 @@ a{text-decoration:none;color:inherit}
 }
 .brand{display:flex;align-items:center}
 .logo-img{height:54px;width:auto;max-width:min(240px,48vw);object-fit:contain}
-.foot-logo{height:80px;width:auto;margin:0 auto 20px;object-fit:contain}
+.foot-logo-wrap{
+  display:inline-flex;justify-content:center;background:var(--paper);
+  padding:14px 28px;border-radius:var(--radius-md);margin:0 auto 24px;
+}
+.foot-logo{height:80px;width:auto;margin:0;object-fit:contain}
 .nav{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
 .nav a{font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:var(--soft);padding:8px 12px;border-radius:999px;transition:.25s}
 .nav a:hover{color:var(--ink);background:rgba(42,46,51,.05)}
@@ -412,7 +416,9 @@ footer .meta a{color:var(--gold-soft)}
 
 <footer>
   <div class="wrap">
-    <img src="logo.png" alt="Pilates Academy Meydan" class="foot-logo" width="240" height="117">
+    <div class="foot-logo-wrap">
+      <img src="logo.png" alt="Pilates Academy Meydan" class="foot-logo" width="240" height="117">
+    </div>
     <p class="meta">Azizi Riviera 17, Dubai · <a href="mailto:hello@pilatesacademy.com">hello@pilatesacademy.com</a></p>
     <p class="meta"><a href="https://www.instagram.com/pilates.academy.dubai/" target="_blank" rel="noopener">Instagram</a></p>
     <p class="meta" style="margin-top:8px">© 2026 Pilates Academy® Meydan · A branch of Pilates Academy® Dubai</p>
