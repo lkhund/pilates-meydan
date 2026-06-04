@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lkhund.github.io/pilates-meydan/sitemap.xml
