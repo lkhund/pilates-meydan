@@ -512,15 +512,25 @@ footer .meta a:hover{opacity:.8}
 
     fetch(WEBHOOK,{
       method:'POST',
-      headers:{'Accept':'text/plain'},
       body:new URLSearchParams(new FormData(form))
     }).then(function(res){
-      if(!res.ok)throw new Error('submit failed');
+      return res.text().then(function(body){
+        if(res.ok)return;
+        if(res.status===410||body.indexOf('no scenario listening')!==-1){
+          throw new Error('webhook_off');
+        }
+        throw new Error('submit failed');
+      });
+    }).then(function(){
       form.hidden=true;
       if(intro)intro.hidden=true;
       success.hidden=false;
-    }).catch(function(){
-      status.textContent='Something went wrong — please try again.';
+    }).catch(function(err){
+      if(err&&err.message==='webhook_off'){
+        status.textContent='Online booking is paused. Email hello@pilatesacademy.com or try again in a few minutes.';
+      }else{
+        status.textContent='Something went wrong — please try again.';
+      }
       status.hidden=false;
       submitBtn.disabled=false;
       submitBtn.innerHTML=btnDefault;
