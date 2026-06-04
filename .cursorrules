@@ -1,0 +1,32 @@
+This project is a single-page landing site for Pilates Academy® Meydan, a boutique
+Pilates studio in Dubai and a branch of Pilates Academy® Dubai (pilatesacademydubai.com).
+
+Everything lives in index.html — HTML, CSS (in a <style> block), and the booking form.
+There is no build step and no framework. Keep it a single self-contained file.
+
+When the user asks for changes, edit index.html directly and keep these constraints:
+
+DESIGN / BRAND
+- Fonts: Cormorant Garamond for headings, Jost for body. Don't introduce new fonts.
+- Colors are CSS variables in :root. Reuse them; don't hardcode new hex values unless asked.
+  ink #2A2E33, soft #5C636B, aqua #7FC9C9, aqua-deep #3E8E8E,
+  gold #C9A24B, gold-soft #D8BC7E, paper #FFFFFF, mist #EEF3F3.
+- Aesthetic: airy, light, premium, editorial. Big serif headlines with gold italic accents.
+- Tagline: "Rooted in Tradition, Inspired by Innovation." Keep the crown + "Pilates Academy / Meydan" lockup.
+
+FORM
+- The booking form posts to Formspree. The action URL contains YOUR_FORM_ID as a placeholder
+  the user must replace with their real Formspree endpoint. Don't remove the form or change
+  the field `name` attributes (name, phone, email, program) unless asked.
+
+LAYOUT
+- It must stay a single-screen-first landing page: the booking form should remain visible
+  in the hero, above the fold, on load. Don't bury it.
+- Keep it responsive (the existing @media breakpoints at 920px and 560px).
+
+ANIMATIONS
+- Fade-in uses `.fade` with `animation-fill-mode: both` so content never gets stuck invisible.
+  Preserve that — never set a permanent opacity:0 on hero content.
+
+When swapping in real images (hero photo, logo), reference files placed in this same folder
+by relative path (e.g. src="logo.png", or background-image:url('hero.jpg')).

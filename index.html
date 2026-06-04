@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pilates Academy® Meydan — Pilates Excellence</title>
+<meta name="description" content="Pilates Academy® Meydan — Rooted in Tradition, Inspired by Innovation. Book your session at our boutique Dubai studio.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#2A2E33;--soft:#5C636B;--line:#E6E2DA;
+  --paper:#FFFFFF;--mist:#EEF3F3;--aqua:#7FC9C9;--aqua-deep:#3E8E8E;
+  --gold:#C9A24B;--gold-soft:#D8BC7E;
+  --display:'Cormorant Garamond',Georgia,serif;--body:'Jost',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);color:var(--ink);background:var(--paper);line-height:1.6;font-weight:300;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.08;letter-spacing:.01em}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--ink);color:#fff;padding:15px 30px;border-radius:2px;font-size:.78rem;font-weight:400;letter-spacing:.22em;text-transform:uppercase;transition:.3s;border:none;cursor:pointer}
+.btn:hover{background:var(--aqua-deep);transform:translateY(-2px)}
+.btn-block{width:100%}
+.fade{animation:fu .9s cubic-bezier(.2,.7,.3,1) both}
+@keyframes fu{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.d1{animation-delay:.1s}.d2{animation-delay:.25s}.d3{animation-delay:.4s}.d4{animation-delay:.55s}
+
+/* WHITE HEADER — dark logo + nav, always legible */
+.header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50}
+.header-inner{max-width:1240px;margin:0 auto;padding:14px 40px;display:flex;flex-direction:column;align-items:center;gap:12px}
+.brand{display:flex;flex-direction:column;align-items:center;gap:3px}
+.brand .crown{width:42px;height:auto}
+.brand .ttl{font-family:var(--body);letter-spacing:.4em;text-transform:uppercase;font-size:.92rem;color:var(--ink)}
+.brand .sub{font-family:var(--display);font-style:italic;font-size:1rem;color:var(--gold);margin-top:-3px}
+.nav{display:flex;gap:30px;flex-wrap:wrap;justify-content:center}
+.nav a{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--soft);transition:.25s;padding-bottom:3px;border-bottom:1px solid transparent}
+.nav a:hover{color:var(--ink);border-color:var(--gold)}
+
+/* HERO */
+.hero{position:relative;min-height:calc(100vh - 130px);display:flex;align-items:center;overflow:hidden}
+.hero-img{position:absolute;inset:0;z-index:0;background:
+  linear-gradient(115deg,#d2e6e6,#a9cccc 45%,#7fb2b2);}
+.hero-img::before{content:'';position:absolute;inset:0;background:
+  radial-gradient(circle at 22% 28%,rgba(255,255,255,.5),transparent 45%),
+  radial-gradient(120% 100% at 70% 60%,rgba(42,46,51,.0),rgba(42,46,51,.5));}
+.grain{position:absolute;inset:0;z-index:1;opacity:.4;mix-blend-mode:overlay;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");}
+.hero-grid{position:relative;z-index:5;width:100%;max-width:1240px;margin:0 auto;padding:60px 40px;display:grid;grid-template-columns:1.05fr .95fr;gap:54px;align-items:center}
+.hero-copy h1{font-size:clamp(3rem,6vw,5.6rem);color:#fff;font-weight:300;text-shadow:0 4px 40px rgba(0,0,0,.35);letter-spacing:.02em}
+.hero-copy h1 em{font-style:italic;display:block;color:var(--gold-soft)}
+.hero-copy .tag{margin-top:18px;display:flex;flex-direction:column;gap:1px}
+.hero-copy .tag span{font-family:var(--display);font-style:italic;font-size:1.5rem;color:#fff;text-shadow:0 2px 24px rgba(0,0,0,.4)}
+.hero-copy .pill{margin-top:26px;display:inline-flex;align-items:center;gap:9px;background:rgba(255,255,255,.18);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.3);color:#fff;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;padding:9px 18px;border-radius:40px;width:fit-content}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--gold-soft)}
+
+/* FORM CARD */
+.card{background:#fff;border:1px solid var(--line);border-radius:6px;padding:38px;box-shadow:0 40px 90px -30px rgba(42,46,51,.5)}
+.card .kicker{font-size:.7rem;letter-spacing:.26em;text-transform:uppercase;color:var(--aqua-deep);margin-bottom:8px}
+.card h2{font-size:2.2rem;margin-bottom:4px;font-weight:400}
+.card .sub{color:var(--soft);font-size:.9rem;margin-bottom:22px}
+form{display:flex;flex-direction:column;gap:12px}
+.field label{display:block;font-size:.67rem;letter-spacing:.14em;text-transform:uppercase;color:var(--soft);margin-bottom:5px}
+.field input,.field select{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:3px;background:#fff;font-family:var(--body);font-weight:300;font-size:.94rem;color:var(--ink);transition:.2s}
+.field input:focus,.field select:focus{outline:none;border-color:var(--aqua);box-shadow:0 0 0 3px rgba(127,201,201,.15)}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.card .note{font-size:.73rem;color:var(--soft);text-align:center;margin-top:5px}
+
+/* PILLARS */
+.pillars{padding:80px 0}
+.wrap{max-width:1180px;margin:0 auto;padding:0 40px}
+.sec-head{text-align:center;max-width:620px;margin:0 auto 48px}
+.sec-head .kicker{font-size:.72rem;letter-spacing:.26em;text-transform:uppercase;color:var(--aqua-deep);margin-bottom:12px}
+.sec-head h2{font-size:clamp(2.2rem,4.5vw,3.4rem);font-weight:400}
+.sec-head h2 em{font-style:italic;color:var(--gold)}
+.p-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.p-cell{background:#fff;padding:34px 26px;transition:.35s}
+.p-cell:hover{background:var(--mist)}
+.p-cell .num{font-family:var(--display);font-style:italic;font-size:1.05rem;color:var(--aqua-deep);margin-bottom:16px}
+.p-cell h3{font-size:1.45rem;font-weight:400;margin-bottom:9px}
+.p-cell p{font-size:.88rem;color:var(--soft)}
+
+/* QUOTE */
+.quote-sec{padding:84px 0;background:var(--mist);text-align:center}
+.quote-sec .mark{font-family:var(--display);font-size:4.5rem;color:var(--gold-soft);line-height:.5;height:36px}
+.quote-sec blockquote{font-family:var(--display);font-style:italic;font-size:clamp(1.7rem,3.4vw,2.6rem);font-weight:300;max-width:840px;margin:0 auto;line-height:1.3}
+.quote-sec .attr{margin-top:24px;font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:var(--soft)}
+
+/* CTA */
+.cta{padding:80px 0;background:var(--ink);color:#fff;text-align:center}
+.cta h2{font-size:clamp(2rem,4vw,3rem);font-weight:300;margin-bottom:12px}
+.cta h2 em{font-style:italic;color:var(--gold-soft)}
+.cta p{color:rgba(255,255,255,.65);max-width:460px;margin:0 auto 28px}
+.cta .btn{background:#fff;color:var(--ink)}
+.cta .btn:hover{background:var(--gold-soft)}
+
+/* FOOTER */
+footer{background:#212529;color:#fff;padding:48px 0 28px;text-align:center}
+.foot-mark{display:flex;flex-direction:column;align-items:center;gap:3px;margin-bottom:16px}
+.foot-mark .ttl{letter-spacing:.4em;text-transform:uppercase;font-size:.85rem}
+.foot-mark .sub{font-family:var(--display);font-style:italic;color:var(--gold-soft)}
+footer .links{display:flex;gap:22px;justify-content:center;margin:16px 0;flex-wrap:wrap}
+footer .links a{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.7);transition:.2s}
+footer .links a:hover{color:var(--gold-soft)}
+footer .meta{font-size:.8rem;color:rgba(255,255,255,.5);margin-top:12px}
+footer .meta a{color:var(--gold-soft)}
+
+@media(max-width:920px){
+  .hero-grid{grid-template-columns:1fr;gap:32px}
+  .hero{min-height:auto}
+  .p-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:560px){
+  .p-grid{grid-template-columns:1fr}
+  .row2{grid-template-columns:1fr}
+  .hero-grid{padding:40px 22px}
+  .card{padding:28px 22px}
+  .nav{gap:18px}
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <div class="brand">
+      <svg class="crown" viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg">
+        <g fill="var(--gold)">
+          <circle cx="14" cy="14" r="4"/><circle cx="50" cy="8" r="4.5"/><circle cx="86" cy="14" r="4"/>
+          <path d="M10 18 L22 40 L36 22 L50 40 L64 22 L78 40 L90 18 C90 30 86 44 84 50 L16 50 C14 44 10 30 10 18 Z M44 44 L50 39 L56 44 C53 47 47 47 44 44 Z"/>
+        </g>
+      </svg>
+      <span class="ttl">Pilates Academy</span>
+      <span class="sub">Meydan</span>
+    </div>
+    <nav class="nav">
+      <a href="#book">Book</a>
+      <a href="#classes">Classes</a>
+      <a href="#quote">Philosophy</a>
+      <a href="#visit">Visit</a>
+      <a href="https://www.instagram.com/pilates.academy.dubai/">Instagram</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-img"></div>
+  <div class="grain"></div>
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <h1 class="fade d1">Pilates<em>Excellence.</em></h1>
+      <div class="tag fade d2">
+        <span>Rooted in Tradition,</span>
+        <span>Inspired by Innovation.</span>
+      </div>
+      <div class="pill fade d3"><span class="dot"></span>Meydan · Dubai</div>
+    </div>
+    <div class="card fade d3" id="book">
+      <div class="kicker">Begin Your Practice</div>
+      <h2>Book a session</h2>
+      <p class="sub">Leave your details — our team will be in touch shortly.</p>
+      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <div class="row2">
+          <div class="field"><label>Name</label><input type="text" name="name" required></div>
+          <div class="field"><label>Phone</label><input type="tel" name="phone"></div>
+        </div>
+        <div class="field"><label>Email</label><input type="email" name="email" required></div>
+        <div class="field"><label>Interested in</label>
+          <select name="program">
+            <option>Reformer Classes</option>
+            <option>Private Sessions</option>
+            <option>Gen Alpha Move Lab (12+)</option>
+            <option>Postural Correction</option>
+            <option>Studio Rental</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-block">Book Now</button>
+        <p class="note">We reply within 24 hours.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="pillars" id="classes">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">What We Offer</div>
+      <h2>Tailored to <em>every body.</em></h2>
+    </div>
+    <div class="p-grid">
+      <div class="p-cell"><div class="num">01</div><h3>Reformer</h3><p>Resistance-based training for core strength, control, and full-body alignment.</p></div>
+      <div class="p-cell"><div class="num">02</div><h3>Private</h3><p>One-on-one sessions tailored entirely to your body, pace, and goals.</p></div>
+      <div class="p-cell"><div class="num">03</div><h3>Move Lab</h3><p>Building confidence through movement for ages 12 and up.</p></div>
+      <div class="p-cell"><div class="num">04</div><h3>Postural</h3><p>Targeted correction restoring healthy alignment and ease of movement.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="quote-sec" id="quote">
+  <div class="wrap">
+    <div class="mark">&ldquo;</div>
+    <blockquote>Physical fitness is the first requisite of happiness.</blockquote>
+    <div class="attr">— Joseph Pilates</div>
+  </div>
+</section>
+
+<section class="cta" id="visit">
+  <div class="wrap">
+    <h2>Visit us in <em>Meydan.</em></h2>
+    <p>A calm, light-filled boutique studio in the heart of Meydan, Dubai. Open Monday to Saturday, 7:00 AM – 9:00 PM.</p>
+    <a href="#book" class="btn">Book Your Session</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-mark">
+      <svg class="crown" viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg" style="width:38px">
+        <g fill="var(--gold-soft)">
+          <circle cx="14" cy="14" r="4"/><circle cx="50" cy="8" r="4.5"/><circle cx="86" cy="14" r="4"/>
+          <path d="M10 18 L22 40 L36 22 L50 40 L64 22 L78 40 L90 18 C90 30 86 44 84 50 L16 50 C14 44 10 30 10 18 Z M44 44 L50 39 L56 44 C53 47 47 47 44 44 Z"/>
+        </g>
+      </svg>
+      <span class="ttl">Pilates Academy</span>
+      <span class="sub">Meydan</span>
+    </div>
+    <div class="links">
+      <a href="#book">Book</a><a href="#classes">Classes</a><a href="#visit">Visit</a>
+      <a href="https://www.instagram.com/pilates.academy.dubai/">Instagram</a>
+    </div>
+    <p class="meta">Meydan, Dubai · Mon–Sat 7AM–9PM · <a href="mailto:hello@pilatesacademy.com">hello@pilatesacademy.com</a></p>
+    <p class="meta" style="margin-top:6px">© 2026 Pilates Academy® Meydan · A branch of Pilates Academy® Dubai</p>
+  </div>
+</footer>
+
+</body>
+</html>
