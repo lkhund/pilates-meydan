@@ -73,10 +73,9 @@ a:focus-visible,.btn:focus-visible,input:focus-visible,select:focus-visible{
 }
 .foot-logo{height:80px;width:auto;margin:0;object-fit:contain}
 .nav{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
-.nav a{font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:var(--soft);padding:8px 12px;border-radius:999px;transition:.25s}
+.nav a{font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:var(--soft);padding:8px 12px;border-radius:999px;transition:background .25s,color .25s}
 .nav a:hover{color:var(--ink);background:rgba(42,46,51,.05)}
-.nav a.nav-cta{background:var(--aqua-deep);color:#fff}
-.nav a.nav-cta:hover{background:var(--ink);color:#fff}
+.nav a.is-active,.nav a.is-active:hover{background:var(--aqua-deep);color:#fff}
 
 /* HERO */
 .hero{
@@ -85,7 +84,11 @@ a:focus-visible,.btn:focus-visible,input:focus-visible,select:focus-visible{
 }
 .hero-bg{
   position:absolute;inset:0;z-index:0;
-  background:url('studio-hero.png') center center/cover no-repeat;
+  background-color:var(--aqua-deep);
+  background-image:url('studio-hero.png');
+  background-position:center;
+  background-size:cover;
+  background-repeat:no-repeat;
 }
 .hero-bg::after{
   content:'';position:absolute;inset:0;
@@ -524,6 +527,58 @@ footer .meta a{color:var(--gold-soft)}
 
   submitBtn.addEventListener('click',sendForm);
   form.addEventListener('submit',function(e){e.preventDefault();sendForm();});
+})();
+
+(function(){
+  var navLinks=document.querySelectorAll('.nav a[href^="#"]');
+  var sections=[
+    {id:'book',el:document.getElementById('book')},
+    {id:'about',el:document.getElementById('about')},
+    {id:'instructors',el:document.getElementById('instructors')},
+    {id:'reviews',el:document.getElementById('reviews')},
+    {id:'visit',el:document.getElementById('visit')}
+  ].filter(function(s){return s.el});
+  if(!navLinks.length||!sections.length)return;
+
+  function setActive(id){
+    navLinks.forEach(function(link){
+      var on=link.getAttribute('href')==='#'+id;
+      link.classList.toggle('is-active',on);
+      if(on)link.setAttribute('aria-current','true');
+      else link.removeAttribute('aria-current');
+    });
+  }
+
+  function updateActiveNav(){
+    var headerH=parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-h'),10)||88;
+    var pos=window.scrollY+headerH+40;
+    var current=sections[0].id;
+    for(var i=0;i<sections.length;i++){
+      if(sections[i].el.offsetTop<=pos)current=sections[i].id;
+    }
+    setActive(current);
+  }
+
+  var ticking=false;
+  function onScroll(){
+    if(ticking)return;
+    ticking=true;
+    requestAnimationFrame(function(){
+      updateActiveNav();
+      ticking=false;
+    });
+  }
+
+  navLinks.forEach(function(link){
+    link.addEventListener('click',function(){
+      var id=link.getAttribute('href').slice(1);
+      if(id)setActive(id);
+    });
+  });
+
+  window.addEventListener('scroll',onScroll,{passive:true});
+  window.addEventListener('resize',onScroll,{passive:true});
+  updateActiveNav();
 })();
 </script>
 
