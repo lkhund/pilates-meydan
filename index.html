@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-<title>Pilates Academy® Meydan — Pilates Excellence</title>
-<meta name="description" content="Pilates Academy® Meydan — Rooted in Tradition, Inspired by Innovation. Book your session at our boutique Dubai studio.">
+<title>Pilates Academy® Meydan — 3-Class Trial AED 300</title>
+<meta name="description" content="Claim your 3-class trial at Pilates Academy® Meydan, Azizi Riviera, Dubai. Authentic Pilates with expert guidance. Rated 5/5 on Google.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
@@ -19,42 +19,34 @@
   --shadow-soft:0 8px 32px rgba(42,46,51,.06);
   --shadow-card:0 24px 64px -16px rgba(42,46,51,.18);
   --shadow-glow:0 32px 80px -24px rgba(62,142,142,.35);
-  --glass:rgba(255,255,255,.72);
+  --glass:rgba(255,255,255,.78);
   --glass-border:rgba(255,255,255,.55);
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{
-  font-family:var(--body);color:var(--ink);background:var(--paper);
-  line-height:1.6;font-weight:300;-webkit-font-smoothing:antialiased;
-  overflow-x:hidden;
-}
+body{font-family:var(--body);color:var(--ink);background:var(--paper);line-height:1.65;font-weight:300;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 ::selection{background:rgba(127,201,201,.35);color:var(--ink)}
-h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.05;letter-spacing:.01em}
-img{max-width:100%;display:block}
+h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.1;letter-spacing:.01em}
+img{max-width:100%;display:block;border-radius:var(--radius-md)}
 a{text-decoration:none;color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding:0 40px}
 
 .btn{
   display:inline-flex;align-items:center;justify-content:center;gap:10px;
-  background:var(--ink);color:#fff;padding:16px 32px;border-radius:999px;
-  font-size:.72rem;font-weight:400;letter-spacing:.22em;text-transform:uppercase;
+  background:var(--aqua-deep);color:#fff;padding:16px 32px;border-radius:999px;
+  font-size:.7rem;font-weight:400;letter-spacing:.2em;text-transform:uppercase;
   transition:transform .35s cubic-bezier(.2,.7,.3,1),box-shadow .35s,background .35s;
   border:none;cursor:pointer;position:relative;overflow:hidden;
 }
-.btn::after{
-  content:'';position:absolute;inset:0;
-  background:linear-gradient(105deg,transparent 40%,rgba(255,255,255,.18) 50%,transparent 60%);
-  transform:translateX(-120%);transition:transform .6s;
-}
-.btn:hover::after{transform:translateX(120%)}
-.btn:hover{background:var(--aqua-deep);transform:translateY(-2px);box-shadow:0 12px 32px rgba(62,142,142,.35)}
+.btn:hover{background:var(--ink);transform:translateY(-2px);box-shadow:0 12px 32px rgba(62,142,142,.35)}
 .btn-block{width:100%}
 .btn svg{width:14px;height:14px;transition:transform .3s}
 .btn:hover svg{transform:translateX(3px)}
+.btn:disabled{opacity:.65;cursor:not-allowed;transform:none}
 
 .fade{animation:fu .95s cubic-bezier(.2,.7,.3,1) both}
 @keyframes fu{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
-.d1{animation-delay:.08s}.d2{animation-delay:.22s}.d3{animation-delay:.38s}.d4{animation-delay:.52s}
+.d1{animation-delay:.08s}.d2{animation-delay:.22s}.d3{animation-delay:.38s}
 
 /* HEADER */
 .header{
@@ -62,276 +54,167 @@ a{text-decoration:none;color:inherit}
   background:var(--glass);backdrop-filter:blur(20px) saturate(1.4);
   -webkit-backdrop-filter:blur(20px) saturate(1.4);
   border-bottom:1px solid var(--glass-border);
-  transition:box-shadow .3s;
 }
 .header-inner{
-  max-width:1240px;margin:0 auto;padding:16px 40px;
-  display:flex;align-items:center;justify-content:space-between;gap:24px;
+  max-width:1240px;margin:0 auto;padding:14px 40px;
+  display:flex;align-items:center;justify-content:space-between;gap:20px;
 }
-.brand{display:flex;align-items:center;gap:14px}
-.brand .crown{width:36px;height:auto;filter:drop-shadow(0 2px 8px rgba(201,162,75,.25))}
-.brand-text{display:flex;flex-direction:column;gap:1px}
-.brand .ttl{font-family:var(--body);letter-spacing:.38em;text-transform:uppercase;font-size:.78rem;color:var(--ink)}
-.brand .sub{font-family:var(--display);font-style:italic;font-size:.95rem;color:var(--gold);margin-top:-2px}
-.nav{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
-.nav a{
-  font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--soft);
-  transition:.25s;padding:8px 14px;border-radius:999px;
-}
+.brand{display:flex;align-items:center;gap:12px}
+.brand .crown{width:34px;height:auto}
+.brand .ttl{font-family:var(--body);letter-spacing:.38em;text-transform:uppercase;font-size:.74rem;color:var(--ink)}
+.brand .sub{font-family:var(--display);font-style:italic;font-size:.9rem;color:var(--gold);margin-top:-2px}
+.nav{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+.nav a{font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:var(--soft);padding:8px 12px;border-radius:999px;transition:.25s}
 .nav a:hover{color:var(--ink);background:rgba(42,46,51,.05)}
-.nav a.nav-cta{
-  background:var(--ink);color:#fff;letter-spacing:.18em;
-}
-.nav a.nav-cta:hover{background:var(--aqua-deep);color:#fff}
+.nav a.nav-cta{background:var(--aqua-deep);color:#fff}
+.nav a.nav-cta:hover{background:var(--ink);color:#fff}
 
 /* HERO */
 .hero{
   position:relative;min-height:100vh;display:flex;align-items:center;
-  overflow:hidden;padding-top:88px;
+  overflow:hidden;padding-top:80px;
 }
-.hero-img{
+.hero-bg{
   position:absolute;inset:0;z-index:0;
-  background:
-    radial-gradient(ellipse 80% 60% at 15% 20%,rgba(255,255,255,.55),transparent 50%),
-    radial-gradient(ellipse 60% 50% at 85% 15%,rgba(201,162,75,.15),transparent 45%),
-    radial-gradient(ellipse 70% 60% at 70% 80%,rgba(62,142,142,.25),transparent 50%),
-    linear-gradient(135deg,#c8e4e4 0%,#9ccccc 35%,#6aabab 65%,#4a9090 100%);
+  background:url('studio-hero.png') center 30%/cover no-repeat;
 }
-.hero-img::before{
+.hero-bg::after{
   content:'';position:absolute;inset:0;
-  background:linear-gradient(160deg,rgba(42,46,51,.08) 0%,rgba(42,46,51,.45) 100%);
-}
-.hero-orb{
-  position:absolute;border-radius:50%;filter:blur(60px);opacity:.5;z-index:1;
-  animation:float 12s ease-in-out infinite;
-}
-.hero-orb.a{width:420px;height:420px;background:rgba(255,255,255,.35);top:-8%;right:10%;animation-delay:0s}
-.hero-orb.b{width:280px;height:280px;background:rgba(201,162,75,.2);bottom:15%;left:-5%;animation-delay:-4s}
-.hero-orb.c{width:200px;height:200px;background:rgba(127,201,201,.3);top:40%;left:35%;animation-delay:-8s}
-@keyframes float{
-  0%,100%{transform:translate(0,0) scale(1)}
-  33%{transform:translate(20px,-15px) scale(1.04)}
-  66%{transform:translate(-15px,10px) scale(.96)}
-}
-.grain{
-  position:absolute;inset:0;z-index:2;opacity:.35;mix-blend-mode:overlay;pointer-events:none;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
+  background:linear-gradient(115deg,rgba(42,46,51,.72) 0%,rgba(42,46,51,.45) 45%,rgba(62,142,142,.35) 100%);
 }
 .hero-grid{
   position:relative;z-index:5;width:100%;max-width:1240px;margin:0 auto;
-  padding:48px 40px 72px;display:grid;grid-template-columns:1.05fr .95fr;
-  gap:56px;align-items:center;
+  padding:40px 40px 64px;display:grid;grid-template-columns:1.05fr .95fr;
+  gap:48px;align-items:center;
+}
+.hero-copy{color:#fff}
+.trial-badge{
+  display:inline-block;font-size:.65rem;letter-spacing:.22em;text-transform:uppercase;
+  background:rgba(127,201,201,.25);border:1px solid rgba(127,201,201,.45);
+  color:#fff;padding:8px 16px;border-radius:999px;margin-bottom:18px;
 }
 .hero-copy h1{
-  font-size:clamp(3.2rem,7vw,6.2rem);color:#fff;font-weight:300;
-  text-shadow:0 4px 48px rgba(0,0,0,.25);letter-spacing:-.01em;
+  font-size:clamp(2.4rem,5.5vw,4.2rem);font-weight:300;line-height:1.08;
+  text-shadow:0 4px 40px rgba(0,0,0,.3);
 }
-.hero-copy h1 em{
-  font-style:italic;display:block;
-  background:linear-gradient(120deg,var(--gold-soft),var(--gold));
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-  text-shadow:none;filter:drop-shadow(0 2px 12px rgba(201,162,75,.3));
+.hero-copy h1 em{font-style:italic;color:var(--gold-soft);display:block;margin-top:6px}
+.hero-copy .lead{
+  margin-top:18px;font-size:clamp(1rem,1.8vw,1.15rem);color:rgba(255,255,255,.9);
+  max-width:520px;line-height:1.7;
 }
-.hero-copy .tag{margin-top:22px;display:flex;flex-direction:column;gap:2px}
-.hero-copy .tag span{
-  font-family:var(--display);font-style:italic;font-size:clamp(1.3rem,2.5vw,1.65rem);
-  color:rgba(255,255,255,.92);text-shadow:0 2px 24px rgba(0,0,0,.3);
-}
-.hero-meta{margin-top:32px;display:flex;flex-wrap:wrap;gap:12px;align-items:center}
-.hero-copy .pill{
-  display:inline-flex;align-items:center;gap:9px;
-  background:rgba(255,255,255,.14);backdrop-filter:blur(12px);
-  border:1px solid rgba(255,255,255,.28);color:#fff;
-  font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;
-  padding:10px 18px;border-radius:999px;
-}
-.dot{width:7px;height:7px;border-radius:50%;background:var(--gold-soft);box-shadow:0 0 12px var(--gold-soft);animation:pulse 2.5s ease infinite}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
-.hero-stat{
-  display:flex;align-items:center;gap:10px;padding:10px 18px;
-  background:rgba(255,255,255,.1);backdrop-filter:blur(8px);
-  border:1px solid rgba(255,255,255,.2);border-radius:999px;
-  font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.85);
-}
-.hero-stat strong{font-family:var(--display);font-size:1.1rem;font-weight:400;color:#fff;letter-spacing:0;text-transform:none}
+.hero-copy .tag{margin-top:16px;font-family:var(--display);font-style:italic;font-size:clamp(1.1rem,2vw,1.35rem);color:rgba(255,255,255,.88)}
+.hero-loc{margin-top:22px;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.75)}
 
-/* FORM CARD */
+/* FORM */
 .card{
-  background:rgba(255,255,255,.88);backdrop-filter:blur(24px) saturate(1.2);
-  -webkit-backdrop-filter:blur(24px) saturate(1.2);
-  border:1px solid rgba(255,255,255,.6);border-radius:var(--radius-lg);
-  padding:40px 36px;box-shadow:var(--shadow-glow);
-  position:relative;overflow:hidden;
+  background:rgba(255,255,255,.92);backdrop-filter:blur(24px);
+  border:1px solid rgba(255,255,255,.65);border-radius:var(--radius-lg);
+  padding:36px 32px;box-shadow:var(--shadow-glow);position:relative;overflow:hidden;
 }
 .card::before{
   content:'';position:absolute;top:0;left:0;right:0;height:3px;
   background:linear-gradient(90deg,var(--aqua),var(--gold-soft),var(--aqua-deep));
 }
-.card .kicker{
-  font-size:.68rem;letter-spacing:.28em;text-transform:uppercase;
-  color:var(--aqua-deep);margin-bottom:10px;display:flex;align-items:center;gap:10px;
-}
-.card .kicker::before{content:'';width:24px;height:1px;background:var(--aqua)}
-.card h2{font-size:clamp(2rem,3vw,2.4rem);margin-bottom:6px;font-weight:400}
-.card .sub{color:var(--soft);font-size:.88rem;margin-bottom:26px;line-height:1.55}
-form{display:flex;flex-direction:column;gap:14px}
-.field label{
-  display:block;font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;
-  color:var(--soft);margin-bottom:6px;
-}
+.card h2{font-size:clamp(1.5rem,2.5vw,1.85rem);margin-bottom:8px}
+.card .sub{color:var(--soft);font-size:.86rem;margin-bottom:20px;line-height:1.55}
+form{display:flex;flex-direction:column;gap:12px}
+.field label{display:block;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--soft);margin-bottom:5px}
 .field input,.field select{
-  width:100%;padding:14px 16px;border:1px solid rgba(42,46,51,.1);
-  border-radius:var(--radius-sm);background:rgba(255,255,255,.8);
-  font-family:var(--body);font-weight:300;font-size:.92rem;color:var(--ink);
-  transition:border-color .25s,box-shadow .25s,background .25s;
+  width:100%;padding:13px 15px;border:1px solid rgba(42,46,51,.1);
+  border-radius:var(--radius-sm);background:#fff;font-family:var(--body);
+  font-weight:300;font-size:.9rem;color:var(--ink);transition:border-color .25s,box-shadow .25s;
 }
-.field input:hover,.field select:hover{background:#fff;border-color:rgba(62,142,142,.25)}
-.field input:focus,.field select:focus{
-  outline:none;border-color:var(--aqua);background:#fff;
-  box-shadow:0 0 0 4px rgba(127,201,201,.15);
-}
-.row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.card .note{font-size:.72rem;color:var(--soft);text-align:center;margin-top:6px}
-.form-status{
-  font-size:.82rem;text-align:center;padding:12px 14px;border-radius:var(--radius-sm);
-  margin-top:4px;line-height:1.5;
-}
-.form-status.error{background:rgba(201,162,75,.12);color:var(--ink);border:1px solid rgba(201,162,75,.25)}
-.form-success{text-align:center;padding:12px 0 4px}
+.field input:focus,.field select:focus{outline:none;border-color:var(--aqua);box-shadow:0 0 0 4px rgba(127,201,201,.15)}
+.form-status{font-size:.8rem;text-align:center;padding:12px;border-radius:var(--radius-sm);line-height:1.5}
+.form-status.error{background:rgba(201,162,75,.12);border:1px solid rgba(201,162,75,.25)}
+.form-success{text-align:center;padding:8px 0}
 .form-success .check{
-  width:52px;height:52px;margin:0 auto 18px;border-radius:50%;
-  background:linear-gradient(135deg,var(--mist),rgba(127,201,201,.35));
-  display:flex;align-items:center;justify-content:center;color:var(--aqua-deep);
+  width:48px;height:48px;margin:0 auto 14px;border-radius:50%;
+  background:var(--mist);display:flex;align-items:center;justify-content:center;color:var(--aqua-deep);
 }
-.form-success .check svg{width:24px;height:24px;stroke:currentColor;fill:none;stroke-width:2}
-.form-success h3{font-size:1.8rem;margin-bottom:8px}
-.form-success p{color:var(--soft);font-size:.92rem;line-height:1.6}
-.btn:disabled{opacity:.65;cursor:not-allowed;transform:none}
+.form-success .check svg{width:22px;stroke:currentColor;fill:none;stroke-width:2}
+.form-success h3{font-size:1.6rem;margin-bottom:6px}
+.form-success p{color:var(--soft);font-size:.88rem}
+.card .note{font-size:.7rem;color:var(--soft);text-align:center;margin-top:4px}
 
-/* PILLARS */
-.pillars{padding:100px 0;position:relative}
-.pillars::before{
-  content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);
-  width:1px;height:80px;background:linear-gradient(to bottom,transparent,var(--line),transparent);
-}
-.wrap{max-width:1180px;margin:0 auto;padding:0 40px}
-.sec-head{text-align:center;max-width:640px;margin:0 auto 56px}
-.sec-head .kicker{
-  font-size:.7rem;letter-spacing:.28em;text-transform:uppercase;
-  color:var(--aqua-deep);margin-bottom:14px;
-}
-.sec-head h2{font-size:clamp(2.4rem,5vw,3.6rem);font-weight:400}
+/* SECTIONS */
+.section{padding:88px 0}
+.section.mist{background:var(--mist)}
+.sec-head{text-align:center;max-width:720px;margin:0 auto 48px}
+.sec-head .kicker{font-size:.68rem;letter-spacing:.28em;text-transform:uppercase;color:var(--aqua-deep);margin-bottom:12px}
+.sec-head h2{font-size:clamp(2rem,4.5vw,3.2rem)}
 .sec-head h2 em{font-style:italic;color:var(--gold)}
-.p-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.prose{max-width:720px;margin:0 auto;text-align:center;color:var(--soft);font-size:.95rem;line-height:1.75}
+.prose p+p{margin-top:16px}
+.prose strong{color:var(--ink);font-weight:400}
+
+.split{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;margin-top:40px}
+.split img{width:100%;border-radius:var(--radius-lg);box-shadow:var(--shadow-card)}
+.split .text{text-align:left}
+.split .text h3{font-size:clamp(1.8rem,3vw,2.4rem);margin-bottom:16px}
+.split .text p{color:var(--soft);font-size:.92rem;line-height:1.75}
+.split .text p+p{margin-top:14px}
+
+/* REVIEWS */
+.reviews-top{text-align:center;margin-bottom:40px}
+.reviews-top .stars{color:var(--gold);font-size:1.1rem;letter-spacing:2px;margin:8px 0}
+.reviews-top .count{font-size:.82rem;color:var(--soft)}
+.review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.review-card{
+  background:var(--paper);padding:28px 24px;border-radius:var(--radius-md);
+  border:1px solid var(--line);box-shadow:var(--shadow-soft);
+}
+.review-card .stars-sm{color:var(--gold);font-size:.85rem;margin:8px 0 12px}
+.review-card p{font-size:.88rem;color:var(--soft);line-height:1.6;font-style:italic}
+.review-card .who{margin-top:14px;font-size:.78rem;color:var(--ink);font-style:normal;font-weight:400}
+.review-card .when{font-size:.7rem;color:var(--soft);margin-top:2px}
+.google-cta{text-align:center;margin-top:36px}
+.google-cta .btn{background:var(--ink)}
+.google-cta .btn:hover{background:var(--aqua-deep)}
+.team-photo{max-width:900px;margin:0 auto 40px;border-radius:var(--radius-lg);box-shadow:var(--shadow-card)}
+
+/* HOURS + MAP */
+.visit-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:40px;align-items:start}
+.hours-list{display:flex;flex-direction:column;gap:18px;margin-top:28px}
+.hour-row{display:flex;align-items:center;gap:16px;font-size:.92rem;color:var(--soft)}
+.hour-row .icon{
+  width:40px;height:40px;border-radius:50%;background:var(--mist);
+  display:flex;align-items:center;justify-content:center;color:var(--aqua-deep);flex-shrink:0;
+}
+.hour-row strong{color:var(--ink);font-weight:400;display:block;font-size:.95rem}
+.map-wrap{border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow-soft)}
+.map-wrap iframe{display:block;width:100%;height:380px;border:0}
+
+/* CLASSES */
+.p-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
 .p-cell{
-  background:var(--paper);padding:36px 28px;border-radius:var(--radius-md);
-  border:1px solid rgba(42,46,51,.06);box-shadow:var(--shadow-soft);
-  transition:transform .4s cubic-bezier(.2,.7,.3,1),box-shadow .4s,border-color .4s;
-  position:relative;overflow:hidden;
+  background:var(--paper);padding:28px 22px;border-radius:var(--radius-md);
+  border:1px solid var(--line);box-shadow:var(--shadow-soft);
 }
-.p-cell::after{
-  content:'';position:absolute;bottom:0;left:0;right:0;height:2px;
-  background:linear-gradient(90deg,var(--aqua),var(--gold-soft));
-  transform:scaleX(0);transform-origin:left;transition:transform .4s;
-}
-.p-cell:hover{transform:translateY(-6px);box-shadow:var(--shadow-card);border-color:rgba(127,201,201,.25)}
-.p-cell:hover::after{transform:scaleX(1)}
-.p-cell .icon{
-  width:44px;height:44px;border-radius:12px;
-  background:linear-gradient(135deg,var(--mist),rgba(127,201,201,.2));
-  display:flex;align-items:center;justify-content:center;margin-bottom:20px;
-  color:var(--aqua-deep);
-}
-.p-cell .icon svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.5}
-.p-cell .num{
-  font-family:var(--display);font-style:italic;font-size:.9rem;
-  color:var(--aqua-deep);opacity:.6;margin-bottom:12px;
-}
-.p-cell h3{font-size:1.5rem;font-weight:400;margin-bottom:10px}
-.p-cell p{font-size:.86rem;color:var(--soft);line-height:1.65}
-
-/* QUOTE */
-.quote-sec{
-  padding:100px 0;background:var(--mist);text-align:center;
-  position:relative;overflow:hidden;
-}
-.quote-sec::before,.quote-sec::after{
-  content:'';position:absolute;width:300px;height:300px;border-radius:50%;
-  background:radial-gradient(circle,rgba(127,201,201,.15),transparent 70%);
-  pointer-events:none;
-}
-.quote-sec::before{top:-100px;left:-80px}
-.quote-sec::after{bottom:-100px;right:-80px}
-.quote-sec .wrap{position:relative;z-index:1}
-.quote-sec .mark{
-  font-family:var(--display);font-size:5rem;color:var(--gold-soft);
-  line-height:.4;height:40px;opacity:.6;
-}
-.quote-sec blockquote{
-  font-family:var(--display);font-style:italic;
-  font-size:clamp(1.8rem,3.6vw,2.8rem);font-weight:300;
-  max-width:780px;margin:0 auto;line-height:1.35;color:var(--ink);
-}
-.quote-sec .attr{
-  margin-top:28px;font-size:.72rem;letter-spacing:.22em;
-  text-transform:uppercase;color:var(--soft);
-}
-
-/* CTA */
-.cta{
-  padding:100px 0;position:relative;overflow:hidden;
-  background:var(--ink);color:#fff;text-align:center;
-}
-.cta-bg{
-  position:absolute;inset:0;
-  background:
-    radial-gradient(ellipse 50% 80% at 20% 50%,rgba(127,201,201,.12),transparent),
-    radial-gradient(ellipse 40% 60% at 80% 30%,rgba(201,162,75,.1),transparent);
-}
-.cta .wrap{position:relative;z-index:1}
-.cta h2{font-size:clamp(2.2rem,4.5vw,3.4rem);font-weight:300;margin-bottom:14px}
-.cta h2 em{font-style:italic;color:var(--gold-soft)}
-.cta p{color:rgba(255,255,255,.6);max-width:480px;margin:0 auto 32px;font-size:.95rem;line-height:1.7}
-.cta .btn{background:#fff;color:var(--ink)}
-.cta .btn:hover{background:var(--gold-soft);color:var(--ink);box-shadow:0 12px 40px rgba(201,162,75,.3)}
+.p-cell h3{font-size:1.35rem;margin-bottom:8px}
+.p-cell p{font-size:.84rem;color:var(--soft);line-height:1.6}
 
 /* FOOTER */
-footer{
-  background:#1a1d21;color:#fff;padding:56px 0 32px;text-align:center;
-  border-top:1px solid rgba(255,255,255,.06);
-}
-.foot-mark{display:flex;flex-direction:column;align-items:center;gap:4px;margin-bottom:20px}
-.foot-mark .crown{width:34px;margin-bottom:4px;opacity:.9}
-.foot-mark .ttl{letter-spacing:.38em;text-transform:uppercase;font-size:.78rem}
-.foot-mark .sub{font-family:var(--display);font-style:italic;color:var(--gold-soft);font-size:.95rem}
-footer .links{display:flex;gap:8px;justify-content:center;margin:20px 0;flex-wrap:wrap}
-footer .links a{
-  font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;
-  color:rgba(255,255,255,.55);transition:.25s;padding:8px 14px;border-radius:999px;
-}
-footer .links a:hover{color:var(--gold-soft);background:rgba(255,255,255,.05)}
-footer .meta{font-size:.78rem;color:rgba(255,255,255,.4);margin-top:16px;line-height:1.8}
-footer .meta a{color:var(--gold-soft);transition:opacity .2s}
-footer .meta a:hover{opacity:.8}
+footer{background:#1a1d21;color:#fff;padding:48px 0 28px;text-align:center}
+footer .meta{font-size:.76rem;color:rgba(255,255,255,.45);margin-top:14px;line-height:1.8}
+footer .meta a{color:var(--gold-soft)}
 
 @media(max-width:920px){
-  .header-inner{flex-direction:column;padding:14px 24px;gap:12px}
+  .header-inner{flex-wrap:wrap;justify-content:center;padding:12px 20px}
   .nav{justify-content:center}
-  .hero-grid{grid-template-columns:1fr;gap:36px;padding:32px 24px 64px}
-  .hero{min-height:auto}
+  .hero-grid,.split,.visit-grid,.review-grid{grid-template-columns:1fr}
   .p-grid{grid-template-columns:1fr 1fr}
   .hero-copy{text-align:center}
-  .hero-meta{justify-content:center}
+  .hero-copy .lead{margin-left:auto;margin-right:auto}
+  .split .text{text-align:center}
 }
 @media(max-width:560px){
-  .p-grid{grid-template-columns:1fr}
-  .row2{grid-template-columns:1fr}
-  .hero-grid{padding:28px 20px 56px}
-  .card{padding:32px 24px;border-radius:var(--radius-md)}
-  .nav{gap:4px}
-  .nav a{padding:7px 10px;font-size:.62rem}
-  .pillars,.quote-sec,.cta{padding:72px 0}
   .wrap{padding:0 20px}
+  .hero-grid{padding:28px 20px 48px}
+  .card{padding:28px 20px}
+  .p-grid,.review-grid{grid-template-columns:1fr}
+  .section{padding:64px 0}
+  .nav a{padding:6px 8px;font-size:.58rem}
 }
 </style>
 </head>
@@ -339,154 +222,218 @@ footer .meta a:hover{opacity:.8}
 
 <header class="header">
   <div class="header-inner">
-    <div class="brand">
+    <a href="#" class="brand">
       <svg class="crown" viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg">
         <g fill="var(--gold)">
           <circle cx="14" cy="14" r="4"/><circle cx="50" cy="8" r="4.5"/><circle cx="86" cy="14" r="4"/>
           <path d="M10 18 L22 40 L36 22 L50 40 L64 22 L78 40 L90 18 C90 30 86 44 84 50 L16 50 C14 44 10 30 10 18 Z M44 44 L50 39 L56 44 C53 47 47 47 44 44 Z"/>
         </g>
       </svg>
-      <div class="brand-text">
-        <span class="ttl">Pilates Academy</span>
-        <span class="sub">Meydan</span>
+      <div>
+        <div class="ttl">Pilates Academy</div>
+        <div class="sub">Meydan</div>
       </div>
-    </div>
+    </a>
     <nav class="nav">
-      <a href="#book" class="nav-cta">Book</a>
-      <a href="#classes">Classes</a>
-      <a href="#quote">Philosophy</a>
+      <a href="#book" class="nav-cta">Claim Trial</a>
+      <a href="#about">About</a>
+      <a href="#instructors">Instructors</a>
+      <a href="#reviews">Reviews</a>
       <a href="#visit">Visit</a>
-      <a href="https://www.instagram.com/pilates.academy.dubai/">Instagram</a>
     </nav>
   </div>
 </header>
 
 <section class="hero">
-  <div class="hero-img"></div>
-  <div class="hero-orb a"></div>
-  <div class="hero-orb b"></div>
-  <div class="hero-orb c"></div>
-  <div class="grain"></div>
+  <div class="hero-bg"></div>
   <div class="hero-grid">
-    <div class="hero-copy">
-      <h1 class="fade d1">Pilates<em>Excellence.</em></h1>
-      <div class="tag fade d2">
-        <span>Rooted in Tradition,</span>
-        <span>Inspired by Innovation.</span>
-      </div>
-      <div class="hero-meta fade d3">
-        <div class="pill"><span class="dot"></span>Meydan · Dubai</div>
-        <div class="hero-stat"><strong>7AM</strong> – 9PM Daily</div>
-      </div>
+    <div class="hero-copy fade d1">
+      <div class="trial-badge">Limited offer</div>
+      <h1>Join 3 Full Classes<em>for only AED 300</em></h1>
+      <p class="lead">Experience the invigorating benefits of Pilates right in the heart of Azizi Riviera.</p>
+      <p class="tag">Rooted in Tradition, Inspired by Innovation.</p>
+      <p class="hero-loc">Pilates Academy® Meydan · Azizi Riviera 17, Dubai</p>
     </div>
-    <div class="card fade d3" id="book">
-      <div class="kicker">Begin Your Practice</div>
-      <h2>Book a session</h2>
-      <p class="sub" id="form-intro">Leave your details — our team will be in touch shortly.</p>
+    <div class="card fade d2" id="book">
+      <h2>Claim your trial</h2>
+      <p class="sub" id="form-intro">Fill in the form below to claim 3 trial classes for AED 300.</p>
       <form id="booking-form" action="#" method="post" novalidate>
-        <div class="row2">
-          <div class="field"><label>Name</label><input type="text" name="name" required placeholder="Your name"></div>
-          <div class="field"><label>Phone</label><input type="tel" name="phone" placeholder="+971 …"></div>
-        </div>
-        <div class="field"><label>Email</label><input type="email" name="email" required placeholder="you@email.com"></div>
-        <div class="field"><label>Interested in</label>
-          <select name="program">
-            <option>Reformer Classes</option>
-            <option>Private Sessions</option>
-            <option>Gen Alpha Move Lab (12+)</option>
-            <option>Postural Correction</option>
-            <option>Studio Rental</option>
+        <div class="field"><label>Full name</label><input type="text" name="name" required placeholder="Full name"></div>
+        <div class="field"><label>Email</label><input type="email" name="email" required placeholder="Email"></div>
+        <div class="field"><label>Phone</label><input type="tel" name="phone" required placeholder="+971 …"></div>
+        <div class="field"><label>Have you done Pilates before?</label>
+          <select name="experience" required>
+            <option value="" disabled selected>Select one</option>
+            <option>Yes, regularly</option>
+            <option>Yes, a few times</option>
+            <option>No, I'm new to Pilates</option>
           </select>
         </div>
-        <button type="button" class="btn btn-block" id="form-submit">
-          Book Now
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </button>
+        <div class="field"><label>Main reason for signing up</label>
+          <select name="reason" required>
+            <option value="" disabled selected>Select one</option>
+            <option>Try the 3-class trial offer</option>
+            <option>Improve fitness &amp; tone</option>
+            <option>Rehabilitation / injury recovery</option>
+            <option>Postural correction</option>
+            <option>Stress relief &amp; wellbeing</option>
+          </select>
+        </div>
+        <button type="button" class="btn btn-block" id="form-submit">Claim 3-Class Trial — AED 300</button>
         <p class="form-status error" id="form-status" hidden></p>
         <p class="note">We reply within 24 hours.</p>
       </form>
       <div class="form-success" id="form-success" hidden>
         <div class="check"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div>
         <h3>Thank you</h3>
-        <p>Your request has been received.<br>Our team will be in touch within 24 hours.</p>
+        <p>Your trial request is received.<br>Our team will contact you shortly.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="pillars" id="classes">
+<section class="section" id="about">
   <div class="wrap">
     <div class="sec-head">
-      <div class="kicker">What We Offer</div>
-      <h2>Tailored to <em>every body.</em></h2>
+      <div class="kicker">Our approach</div>
+      <h2>Authentic Pilates.<br><em>Contemporary approach.</em></h2>
+    </div>
+    <div class="prose">
+      <p>At Pilates Academy® Meydan, we honor the traditional principles of the Pilates method while advancing the practice with our own precision-engineered equipment. Our custom-designed apparatus delivers results that go beyond conventional Pilates.</p>
+      <p>Experience the discipline Joseph Pilates intended, enhanced by decades of biomechanical expertise.</p>
+    </div>
+    <div class="split">
+      <img src="studio-interior.png" alt="Pilates Academy Meydan studio with reformers" width="800" height="600" loading="lazy">
+      <div class="text">
+        <h3>A boutique studio in Azizi Riviera</h3>
+        <p>Light-filled, calm, and fully equipped with Mat, Reformer, Cadillac, Chair, and Barrels — everything you need for a complete Pilates practice.</p>
+        <p><a href="#book" class="btn">Claim Your Trial</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section mist" id="instructors">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">Our team</div>
+      <h2>Expert guidance at <em>every session</em></h2>
+    </div>
+    <div class="prose">
+      <p>Our instructors bring the full spectrum of Pilates knowledge to your classes.</p>
+      <p>Certified across the complete apparatus repertoire – Mat, Reformer, Cadillac, Chair, and Barrels – each trainer combines international credentials with specialized expertise in rehabilitation, biomechanics, and movement therapy.</p>
+      <p><strong>Every session is tailored, every cue is intentional, and every movement serves your long-term wellbeing.</strong></p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="classes">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">What we offer</div>
+      <h2>Programs for <em>every body</em></h2>
     </div>
     <div class="p-grid">
-      <div class="p-cell">
-        <div class="icon"><svg viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="10" rx="2"/><path d="M7 8V6a5 5 0 0110 0v2"/></svg></div>
-        <div class="num">01</div>
-        <h3>Reformer</h3>
-        <p>Resistance-based training for core strength, control, and full-body alignment.</p>
-      </div>
-      <div class="p-cell">
-        <div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-6 8-6s8 2 8 6"/></svg></div>
-        <div class="num">02</div>
-        <h3>Private</h3>
-        <p>One-on-one sessions tailored entirely to your body, pace, and goals.</p>
-      </div>
-      <div class="p-cell">
-        <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg></div>
-        <div class="num">03</div>
-        <h3>Move Lab</h3>
-        <p>Building confidence through movement for ages 12 and up.</p>
-      </div>
-      <div class="p-cell">
-        <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 3v18M8 7l4-4 4 4M8 17l4 4 4-4"/></svg></div>
-        <div class="num">04</div>
-        <h3>Postural</h3>
-        <p>Targeted correction restoring healthy alignment and ease of movement.</p>
-      </div>
+      <div class="p-cell"><h3>Reformer</h3><p>Resistance-based training for core strength, control, and full-body alignment.</p></div>
+      <div class="p-cell"><h3>Private</h3><p>One-on-one sessions tailored entirely to your body, pace, and goals.</p></div>
+      <div class="p-cell"><h3>Move Lab</h3><p>Building confidence through movement for ages 12 and up.</p></div>
+      <div class="p-cell"><h3>Postural</h3><p>Targeted correction restoring healthy alignment and ease of movement.</p></div>
     </div>
   </div>
 </section>
 
-<section class="quote-sec" id="quote">
+<section class="section mist" id="reviews">
   <div class="wrap">
-    <div class="mark">&ldquo;</div>
-    <blockquote>Physical fitness is the first requisite of happiness.</blockquote>
-    <div class="attr">— Joseph Pilates</div>
+    <img class="team-photo" src="team-community.png" alt="Pilates Academy Meydan instructors and community" width="900" height="500" loading="lazy">
+    <div class="sec-head">
+      <div class="kicker">Community</div>
+      <h2>Be part of a vibrant <em>community</em></h2>
+      <p style="margin-top:12px;font-family:var(--display);font-style:italic;font-size:1.25rem;color:var(--soft)">Rated 5/5 on Google!</p>
+    </div>
+    <div class="reviews-top">
+      <div style="font-size:1.1rem;font-weight:400;color:var(--ink)">Pilates Academy Meydan</div>
+      <div class="stars">★★★★★</div>
+      <div class="count"><strong style="color:var(--ink)">5.0</strong> · Based on 36 reviews</div>
+    </div>
+    <div class="review-grid">
+      <div class="review-card">
+        <div class="stars-sm">★★★★★</div>
+        <p>Enjoying classes here — welcoming instructors and a beautiful studio.</p>
+        <div class="who">Jessica Corso</div>
+        <div class="when">Google review</div>
+      </div>
+      <div class="review-card">
+        <div class="stars-sm">★★★★★</div>
+        <p>There is always a caring instructor for each attendee, and the team maintains the right balance of challenge and support.</p>
+        <div class="who">Google reviewer</div>
+        <div class="when">5-star review</div>
+      </div>
+      <div class="review-card">
+        <div class="stars-sm">★★★★★</div>
+        <p>Professional, attentive teaching in a calm space. Highly recommend for anyone serious about their practice.</p>
+        <div class="who">Google reviewer</div>
+        <div class="when">5-star review</div>
+      </div>
+    </div>
+    <div class="google-cta">
+      <a href="https://www.google.com/maps/search/Pilates+Academy+Meydan+Dubai" class="btn" target="_blank" rel="noopener">Review us on Google</a>
+    </div>
   </div>
 </section>
 
-<section class="cta" id="visit">
-  <div class="cta-bg"></div>
+<section class="section" id="visit">
   <div class="wrap">
-    <h2>Visit us in <em>Meydan.</em></h2>
-    <p>A calm, light-filled boutique studio in the heart of Meydan, Dubai. Open Monday to Saturday, 7:00 AM – 9:00 PM.</p>
-    <a href="#book" class="btn">
-      Book Your Session
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-    </a>
+    <div class="sec-head">
+      <div class="kicker">Find us</div>
+      <h2>Visit us in <em>Meydan</em></h2>
+      <p class="prose" style="margin-top:14px">Azizi Riviera 17 · Dubai</p>
+    </div>
+    <div class="visit-grid">
+      <div>
+        <img src="studio-floor.png" alt="Pilates reformers at Pilates Academy Meydan" width="800" height="500" loading="lazy" style="margin-bottom:24px">
+        <div class="hours-list">
+          <div class="hour-row">
+            <span class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+            <span><strong>Monday – Friday</strong>7am – 9pm</span>
+          </div>
+          <div class="hour-row">
+            <span class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+            <span><strong>Saturday</strong>7am – 6pm</span>
+          </div>
+          <div class="hour-row">
+            <span class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+            <span><strong>Sunday</strong>8am – 2pm</span>
+          </div>
+        </div>
+        <p style="margin-top:28px"><a href="#book" class="btn btn-block" style="max-width:360px">Claim Your 3-Class Trial — AED 300</a></p>
+      </div>
+      <div class="map-wrap">
+        <iframe
+          title="Pilates Academy Meydan location"
+          src="https://maps.google.com/maps?q=Azizi+Riviera+17,+Dubai&amp;z=15&amp;output=embed"
+          allowfullscreen
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
-    <div class="foot-mark">
-      <svg class="crown" viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg">
+    <div class="brand" style="justify-content:center;margin-bottom:8px">
+      <svg class="crown" viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg" style="width:32px">
         <g fill="var(--gold-soft)">
           <circle cx="14" cy="14" r="4"/><circle cx="50" cy="8" r="4.5"/><circle cx="86" cy="14" r="4"/>
           <path d="M10 18 L22 40 L36 22 L50 40 L64 22 L78 40 L90 18 C90 30 86 44 84 50 L16 50 C14 44 10 30 10 18 Z M44 44 L50 39 L56 44 C53 47 47 47 44 44 Z"/>
         </g>
       </svg>
-      <span class="ttl">Pilates Academy</span>
-      <span class="sub">Meydan</span>
     </div>
-    <div class="links">
-      <a href="#book">Book</a><a href="#classes">Classes</a><a href="#visit">Visit</a>
-      <a href="https://www.instagram.com/pilates.academy.dubai/">Instagram</a>
-    </div>
-    <p class="meta">Meydan, Dubai · Mon–Sat 7AM–9PM · <a href="mailto:hello@pilatesacademy.com">hello@pilatesacademy.com</a></p>
-    <p class="meta" style="margin-top:6px">© 2026 Pilates Academy® Meydan · A branch of Pilates Academy® Dubai</p>
+    <div class="ttl" style="letter-spacing:.38em;text-transform:uppercase;font-size:.76rem">Pilates Academy</div>
+    <div class="sub" style="font-family:var(--display);font-style:italic;color:var(--gold-soft);font-size:.9rem">Meydan</div>
+    <p class="meta">Azizi Riviera 17, Dubai · <a href="mailto:hello@pilatesacademy.com">hello@pilatesacademy.com</a></p>
+    <p class="meta"><a href="https://www.instagram.com/pilates.academy.dubai/" target="_blank" rel="noopener">Instagram</a></p>
+    <p class="meta" style="margin-top:8px">© 2026 Pilates Academy® Meydan · A branch of Pilates Academy® Dubai</p>
   </div>
 </footer>
 
@@ -509,40 +456,29 @@ footer .meta a:hover{opacity:.8}
     submitBtn.disabled=true;
     status.hidden=true;
     submitBtn.textContent='Sending…';
-
-    fetch(WEBHOOK,{
-      method:'POST',
-      body:new URLSearchParams(new FormData(form))
-    }).then(function(res){
-      return res.text().then(function(body){
+    fetch(WEBHOOK,{method:'POST',body:new URLSearchParams(new FormData(form))})
+      .then(function(res){return res.text().then(function(body){
         if(res.ok)return;
-        if(res.status===410||body.indexOf('no scenario listening')!==-1){
-          throw new Error('webhook_off');
-        }
+        if(res.status===410||body.indexOf('no scenario listening')!==-1)throw new Error('webhook_off');
         throw new Error('submit failed');
+      });})
+      .then(function(){
+        form.hidden=true;
+        if(intro)intro.hidden=true;
+        success.hidden=false;
+      })
+      .catch(function(err){
+        status.textContent=(err&&err.message==='webhook_off')
+          ?'Online booking is paused. Email hello@pilatesacademy.com or try again shortly.'
+          :'Something went wrong — please try again.';
+        status.hidden=false;
+        submitBtn.disabled=false;
+        submitBtn.innerHTML=btnDefault;
+        sending=false;
       });
-    }).then(function(){
-      form.hidden=true;
-      if(intro)intro.hidden=true;
-      success.hidden=false;
-    }).catch(function(err){
-      if(err&&err.message==='webhook_off'){
-        status.textContent='Online booking is paused. Email hello@pilatesacademy.com or try again in a few minutes.';
-      }else{
-        status.textContent='Something went wrong — please try again.';
-      }
-      status.hidden=false;
-      submitBtn.disabled=false;
-      submitBtn.innerHTML=btnDefault;
-      sending=false;
-    });
   }
-
   submitBtn.addEventListener('click',sendForm);
-  form.addEventListener('submit',function(e){
-    e.preventDefault();
-    sendForm();
-  });
+  form.addEventListener('submit',function(e){e.preventDefault();sendForm();});
 })();
 </script>
 
