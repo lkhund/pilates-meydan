@@ -28,6 +28,7 @@ body{font-family:var(--body);color:var(--ink);background:var(--paper);line-heigh
 ::selection{background:rgba(127,201,201,.35);color:var(--ink)}
 h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.1;letter-spacing:.01em}
 img{max-width:100%;display:block;border-radius:var(--radius-md)}
+img.logo-img,img.foot-logo{border-radius:0}
 a{text-decoration:none;color:inherit}
 .wrap{max-width:1180px;margin:0 auto;padding:0 40px}
 
@@ -59,10 +60,9 @@ a{text-decoration:none;color:inherit}
   max-width:1240px;margin:0 auto;padding:14px 40px;
   display:flex;align-items:center;justify-content:space-between;gap:20px;
 }
-.brand{display:flex;align-items:center;gap:12px}
-.brand .crown{width:34px;height:auto}
-.brand .ttl{font-family:var(--body);letter-spacing:.38em;text-transform:uppercase;font-size:.74rem;color:var(--ink)}
-.brand .sub{font-family:var(--display);font-style:italic;font-size:.9rem;color:var(--gold);margin-top:-2px}
+.brand{display:flex;align-items:center}
+.logo-img{height:54px;width:auto;max-width:min(240px,48vw);object-fit:contain}
+.foot-logo{height:80px;width:auto;margin:0 auto 20px;object-fit:contain}
 .nav{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
 .nav a{font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:var(--soft);padding:8px 12px;border-radius:999px;transition:.25s}
 .nav a:hover{color:var(--ink);background:rgba(42,46,51,.05)}
@@ -223,16 +223,7 @@ footer .meta a{color:var(--gold-soft)}
 <header class="header">
   <div class="header-inner">
     <a href="#" class="brand">
-      <svg class="crown" viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg">
-        <g fill="var(--gold)">
-          <circle cx="14" cy="14" r="4"/><circle cx="50" cy="8" r="4.5"/><circle cx="86" cy="14" r="4"/>
-          <path d="M10 18 L22 40 L36 22 L50 40 L64 22 L78 40 L90 18 C90 30 86 44 84 50 L16 50 C14 44 10 30 10 18 Z M44 44 L50 39 L56 44 C53 47 47 47 44 44 Z"/>
-        </g>
-      </svg>
-      <div>
-        <div class="ttl">Pilates Academy</div>
-        <div class="sub">Meydan</div>
-      </div>
+      <img src="logo.png" alt="Pilates Academy Meydan" class="logo-img" width="240" height="117">
     </a>
     <nav class="nav">
       <a href="#book" class="nav-cta">Claim Trial</a>
@@ -421,16 +412,7 @@ footer .meta a{color:var(--gold-soft)}
 
 <footer>
   <div class="wrap">
-    <div class="brand" style="justify-content:center;margin-bottom:8px">
-      <svg class="crown" viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg" style="width:32px">
-        <g fill="var(--gold-soft)">
-          <circle cx="14" cy="14" r="4"/><circle cx="50" cy="8" r="4.5"/><circle cx="86" cy="14" r="4"/>
-          <path d="M10 18 L22 40 L36 22 L50 40 L64 22 L78 40 L90 18 C90 30 86 44 84 50 L16 50 C14 44 10 30 10 18 Z M44 44 L50 39 L56 44 C53 47 47 47 44 44 Z"/>
-        </g>
-      </svg>
-    </div>
-    <div class="ttl" style="letter-spacing:.38em;text-transform:uppercase;font-size:.76rem">Pilates Academy</div>
-    <div class="sub" style="font-family:var(--display);font-style:italic;color:var(--gold-soft);font-size:.9rem">Meydan</div>
+    <img src="logo.png" alt="Pilates Academy Meydan" class="foot-logo" width="240" height="117">
     <p class="meta">Azizi Riviera 17, Dubai · <a href="mailto:hello@pilatesacademy.com">hello@pilatesacademy.com</a></p>
     <p class="meta"><a href="https://www.instagram.com/pilates.academy.dubai/" target="_blank" rel="noopener">Instagram</a></p>
     <p class="meta" style="margin-top:8px">© 2026 Pilates Academy® Meydan · A branch of Pilates Academy® Dubai</p>
