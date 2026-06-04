@@ -236,6 +236,11 @@ a:focus-visible,.btn:focus-visible,input:focus-visible,select:focus-visible{
 .card .sub{color:var(--soft);font-size:.86rem;margin-bottom:20px;line-height:1.55;position:relative;z-index:1}
 form{display:flex;flex-direction:column;gap:12px;position:relative;z-index:1}
 .field label{display:block;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--soft);margin-bottom:5px}
+.field label.req::after{content:' *';color:var(--aqua-deep)}
+.field-hp{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.field input:invalid:not(:placeholder-shown):not(:focus),.field select:invalid:not(:focus){
+  border-color:rgba(201,162,75,.45);
+}
 .field input,.field select{
   width:100%;padding:13px 15px;border:1px solid rgba(42,46,51,.1);
   border-radius:var(--radius-sm);background:#fff;font-family:var(--body);
@@ -480,22 +485,26 @@ footer .meta a{color:var(--gold-soft)}
     </div>
     <div class="card fade d2" id="book">
       <h2 id="form-title">Claim your trial</h2>
-      <p class="sub" id="form-intro">Fill in the form below to claim 3 trial classes for AED 300.</p>
+      <p class="sub" id="form-intro">All fields are required. Fill in the form below to claim 3 trial classes for AED 300.</p>
       <form id="booking-form" action="#" method="post" novalidate aria-labelledby="form-title">
-        <div class="field">
-          <label for="field-name">Full name</label>
-          <input type="text" id="field-name" name="name" required placeholder="Full name" autocomplete="name">
+        <div class="field-hp" aria-hidden="true">
+          <label for="field-hp">Leave blank</label>
+          <input type="text" id="field-hp" name="website" tabindex="-1" autocomplete="off">
         </div>
         <div class="field">
-          <label for="field-email">Email</label>
-          <input type="email" id="field-email" name="email" required placeholder="Email" autocomplete="email">
+          <label for="field-name" class="req">Full name</label>
+          <input type="text" id="field-name" name="name" required minlength="2" maxlength="80" placeholder="Full name" autocomplete="name">
         </div>
         <div class="field">
-          <label for="field-phone">Phone</label>
-          <input type="tel" id="field-phone" name="phone" required placeholder="+971 …" autocomplete="tel">
+          <label for="field-email" class="req">Email</label>
+          <input type="email" id="field-email" name="email" required maxlength="120" placeholder="you@email.com" autocomplete="email">
         </div>
         <div class="field">
-          <label for="field-experience">Have you done Pilates before?</label>
+          <label for="field-phone" class="req">Phone</label>
+          <input type="tel" id="field-phone" name="phone" required minlength="8" maxlength="20" inputmode="tel" placeholder="+971 …" autocomplete="tel" pattern="[\d\s+\-()]{8,20}" title="Enter a valid phone number (at least 8 digits)">
+        </div>
+        <div class="field">
+          <label for="field-experience" class="req">Have you done Pilates before?</label>
           <select id="field-experience" name="experience" required>
             <option value="" disabled selected hidden>Select one</option>
             <option value="yes_regularly">Yes, regularly</option>
@@ -504,7 +513,7 @@ footer .meta a{color:var(--gold-soft)}
           </select>
         </div>
         <div class="field">
-          <label for="field-reason">Main reason for signing up</label>
+          <label for="field-reason" class="req">Main reason for signing up</label>
           <select id="field-reason" name="reason" required>
             <option value="" disabled selected hidden>Select one</option>
             <option value="trial_offer">Try the 3-class trial offer</option>
@@ -712,9 +721,52 @@ footer .meta a{color:var(--gold-soft)}
     status.focus({preventScroll:true});
   }
 
+  var hpField=document.getElementById('field-hp');
+  var nameField=document.getElementById('field-name');
+  var emailField=document.getElementById('field-email');
+  var phoneField=document.getElementById('field-phone');
+
+  function clearCustomValidity(){
+    if(nameField)nameField.setCustomValidity('');
+    if(emailField)emailField.setCustomValidity('');
+    if(phoneField)phoneField.setCustomValidity('');
+  }
+
+  function validateForm(){
+    clearCustomValidity();
+    if(hpField&&hpField.value.trim())return false;
+    if(nameField){
+      var n=nameField.value.trim();
+      if(n.length<2){nameField.setCustomValidity('Please enter your full name.');nameField.reportValidity();return false;}
+    }
+    if(emailField){
+      var em=emailField.value.trim();
+      if(!em||em.indexOf('@')<1||em.indexOf('.')<3){emailField.setCustomValidity('Please enter a valid email address.');emailField.reportValidity();return false;}
+    }
+    if(phoneField){
+      var digits=phoneField.value.replace(/\D/g,'');
+      if(digits.length<8){phoneField.setCustomValidity('Please enter a valid phone number.');phoneField.reportValidity();return false;}
+    }
+    if(!form.reportValidity())return false;
+    return true;
+  }
+
+  function buildPayload(){
+    var params=new URLSearchParams(new FormData(form));
+    params.delete('website');
+    if(nameField)params.set('name',nameField.value.trim());
+    if(emailField)params.set('email',emailField.value.trim());
+    if(phoneField)params.set('phone',phoneField.value.trim());
+    return params;
+  }
+
+  [nameField,emailField,phoneField].forEach(function(el){
+    if(el)el.addEventListener('input',clearCustomValidity);
+  });
+
   function sendForm(){
     if(sending)return;
-    if(!form.reportValidity())return;
+    if(!validateForm())return;
     sending=true;
     status.hidden=true;
     setBusy(true);
@@ -722,7 +774,7 @@ footer .meta a{color:var(--gold-soft)}
     var timer=setTimeout(function(){controller.abort()},TIMEOUT_MS);
     fetch(WEBHOOK,{
       method:'POST',
-      body:new URLSearchParams(new FormData(form)),
+      body:buildPayload(),
       signal:controller.signal
     })
       .then(function(res){return res.text().then(function(body){
