@@ -827,12 +827,18 @@ src="https://www.facebook.com/tr?id=1483835746407526&amp;ev=PageView&amp;noscrip
   }
 
   function buildPayload(){
-    var params=new URLSearchParams(new FormData(form));
-    params.delete('website');
-    if(nameField)params.set('name',nameField.value.trim());
-    if(emailField)params.set('email',emailField.value.trim());
-    if(phoneField)params.set('phone',phoneField.value.trim());
-    return params;
+    return {
+      name:nameField?nameField.value.trim():'',
+      email:emailField?emailField.value.trim():'',
+      phone:phoneField?phoneField.value.trim():'',
+      experience:form.elements.experience?form.elements.experience.value:'',
+      reason:form.elements.reason?form.elements.reason.value:'',
+      event_id:eventIdField?eventIdField.value:'',
+      event_name:'Lead',
+      event_source_url:eventSourceField?eventSourceField.value:window.location.href,
+      fbp:fbpField?fbpField.value:'',
+      fbc:fbcField?fbcField.value:''
+    };
   }
 
   [nameField,emailField,phoneField].forEach(function(el){
@@ -851,8 +857,8 @@ src="https://www.facebook.com/tr?id=1483835746407526&amp;ev=PageView&amp;noscrip
     var timer=setTimeout(function(){controller.abort()},TIMEOUT_MS);
     fetch(WEBHOOK,{
       method:'POST',
-      headers:{'Content-Type':'application/x-www-form-urlencoded;charset=UTF-8'},
-      body:buildPayload(),
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify(buildPayload()),
       signal:controller.signal
     })
       .then(function(res){return res.text().then(function(body){
