@@ -517,6 +517,11 @@ src="https://www.facebook.com/tr?id=1483835746407526&amp;ev=PageView&amp;noscrip
           <label for="field-hp">Leave blank</label>
           <input type="text" id="field-hp" name="website" tabindex="-1" autocomplete="off">
         </div>
+        <input type="hidden" name="event_id" id="field-event-id" value="">
+        <input type="hidden" name="event_name" id="field-event-name" value="Lead">
+        <input type="hidden" name="event_source_url" id="field-event-source" value="">
+        <input type="hidden" name="fbp" id="field-fbp" value="">
+        <input type="hidden" name="fbc" id="field-fbc" value="">
         <div class="field">
           <label for="field-name" class="req">Full name</label>
           <input type="text" id="field-name" name="name" required minlength="2" maxlength="80" placeholder="Full name" autocomplete="name">
@@ -809,21 +814,24 @@ src="https://www.facebook.com/tr?id=1483835746407526&amp;ev=PageView&amp;noscrip
     return true;
   }
 
-  function buildPayload(eventId){
+  var eventIdField=document.getElementById('field-event-id');
+  var eventSourceField=document.getElementById('field-event-source');
+  var fbpField=document.getElementById('field-fbp');
+  var fbcField=document.getElementById('field-fbc');
+
+  function setTrackingFields(eventId){
+    if(eventIdField)eventIdField.value=eventId||'';
+    if(eventSourceField)eventSourceField.value=window.location.href;
+    if(fbpField)fbpField.value=getCookie('_fbp');
+    if(fbcField)fbcField.value=getCookie('_fbc');
+  }
+
+  function buildPayload(){
     var params=new URLSearchParams(new FormData(form));
     params.delete('website');
     if(nameField)params.set('name',nameField.value.trim());
     if(emailField)params.set('email',emailField.value.trim());
     if(phoneField)params.set('phone',phoneField.value.trim());
-    if(eventId){
-      params.set('event_id',eventId);
-      params.set('event_name','Lead');
-      params.set('event_source_url',window.location.href);
-    }
-    var fbp=getCookie('_fbp');
-    var fbc=getCookie('_fbc');
-    if(fbp)params.set('fbp',fbp);
-    if(fbc)params.set('fbc',fbc);
     return params;
   }
 
@@ -838,11 +846,13 @@ src="https://www.facebook.com/tr?id=1483835746407526&amp;ev=PageView&amp;noscrip
     status.hidden=true;
     setBusy(true);
     var leadEventId=createEventId();
+    setTrackingFields(leadEventId);
     var controller=new AbortController();
     var timer=setTimeout(function(){controller.abort()},TIMEOUT_MS);
     fetch(WEBHOOK,{
       method:'POST',
-      body:buildPayload(leadEventId),
+      headers:{'Content-Type':'application/x-www-form-urlencoded;charset=UTF-8'},
+      body:buildPayload(),
       signal:controller.signal
     })
       .then(function(res){return res.text().then(function(body){
