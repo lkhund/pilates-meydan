@@ -730,12 +730,44 @@ src="https://www.facebook.com/tr?id=1483835746407526&amp;ev=PageView&amp;noscrip
     submitBtn.textContent=busy?'Sending…':btnDefault;
   }
 
-  function showSuccess(){
+  function createEventId(){
+    if(window.crypto&&typeof crypto.randomUUID==='function')return crypto.randomUUID();
+    return 'lead_'+Date.now()+'_'+Math.random().toString(36).slice(2,11);
+  }
+
+  function getCookie(name){
+    var match=document.cookie.match(new RegExp('(?:^|; )'+name+'=([^;]*)'));
+    return match?decodeURIComponent(match[1]):'';
+  }
+
+  function trackConversion(eventId){
+    if(window._trialTracked)return;
+    window._trialTracked=true;
+    if(typeof gtag==='function'){
+      gtag('event','generate_lead',{
+        event_category:'form',
+        event_label:'trial_booking',
+        value:300,
+        currency:'AED',
+        transaction_id:eventId
+      });
+    }
+    if(typeof fbq==='function'&&eventId){
+      fbq('track','Lead',{
+        content_name:'3-Class Trial AED 300',
+        value:300,
+        currency:'AED'
+      },{eventID:eventId});
+    }
+  }
+
+  function showSuccess(eventId){
     form.hidden=true;
     if(intro)intro.hidden=true;
     if(formTitle)formTitle.hidden=true;
     if(formNote)formNote.hidden=true;
     success.hidden=false;
+    trackConversion(eventId);
     success.scrollIntoView({behavior:'smooth',block:'nearest'});
   }
 
